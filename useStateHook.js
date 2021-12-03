@@ -3,11 +3,8 @@ import React, { useEffect, useState } from "react";
 let hookState ;
 let hookSetStateListners = [];
 
-const useStateHook = (initialState = undefined, shouldListen = true) => {
+const useStateHook = (shouldListen = true) => {
 
-    if(initialState) {
-        hookState = initialState;
-    }
     const setState = useState(hookState)[1];
 
     useEffect(() => {

@@ -39,7 +39,7 @@ function CounterDisplay() {
 }
 
 function CountIncrementButton() {
-  const {hookState,setHookState} = useHookState(); //setHookState funtion to update global state 
+  const {hookState,setHookState} = useHookState(); //setHookState function to update global state 
   return(
     <button onClick={() => setHookState(hookState+1)}>Increment count!</button>
   )
