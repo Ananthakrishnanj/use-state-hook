@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-let hookState;
+let hookState ;
 let hookSetStateListners = [];
 
-const useStateHook = (shouldListen = true) => {
+const useStateHook = (initialState = undefined, shouldListen = true) => {
 
+    if(initialState) {
+        hookState = initialState;
+    }
     const setState = useState(hookState)[1];
 
     useEffect(() => {
@@ -16,7 +19,7 @@ const useStateHook = (shouldListen = true) => {
                 hookSetStateListners = hookSetStateListners.filter(li => li !== setState);
             }
         }
-    }, [shouldListen]);
+    }, [shouldListen, setState]);
 
     const setHookState = (state) => {
         hookState = state;
