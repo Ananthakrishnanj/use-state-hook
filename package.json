@@ -1,15 +1,19 @@
 {
   "name": "use-state-hook",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple react hook for global state management",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Anantha Krishnan J",
   "license": "ISC",
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ananthakrishnanj/use-state-hook"
   }
 }
