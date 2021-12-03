@@ -1,6 +1,6 @@
 {
   "name": "use-state-hook",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple react hook for global state management",
   "main": "index.js",
   "scripts": {

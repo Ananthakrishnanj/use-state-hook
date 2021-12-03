@@ -15,7 +15,7 @@ Install use-state-hook with npm
 ## Usage/Examples
 
 ```javascript
-import useHookState from 'use-hook-state'
+import useHookState from 'use-state-hook'
 
 function App() {
 
