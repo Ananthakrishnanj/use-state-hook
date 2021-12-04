@@ -1,29 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 let hookState ;
 let hookSetStateListners = [];
 
-const useStateHook = (shouldListen = true) => {
+const useStateHook = () => {
 
     const setState = useState(hookState)[1];
 
-    useEffect(() => {
-        if(shouldListen) {
-            hookSetStateListners.push(setState);
-        }
-        return () => {
-            if(shouldListen) {
+    useEffect(() => {        
+        hookSetStateListners.push(setState);
+        return () => {            
                 hookSetStateListners = hookSetStateListners.filter(li => li !== setState);
-            }
         }
-    }, [shouldListen, setState]);
+    }, []);
 
-    const setHookState = (state) => {
-        hookState = state;
+    const setHookState = useCallback((state) => {
+        hookState = state;        
         for(const hookSetStateListner of hookSetStateListners) {
             hookSetStateListner(state);
         }
-    }
+    }, []);
 
     return {hookState, setHookState};
 
