@@ -10,7 +10,7 @@ const useStateHook = () => {
     useEffect(() => {        
         hookSetStateListners.push(setState);
         return () => {            
-                hookSetStateListners = hookSetStateListners.filter(li => li !== setState);
+                hookSetStateListners = hookSetStateListners.filter(listner => listner !== setState);
         }
     }, []);
 
